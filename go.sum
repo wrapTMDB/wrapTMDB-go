@@ -1,2 +1,8 @@
 github.com/kwangsing3/http_methods_golang v0.2.0 h1:/TpTvdmY89hn3727tza8KT+EbvQxD4VSls4iE0qOShM=
 github.com/kwangsing3/http_methods_golang v0.2.0/go.mod h1:lUAJ0MI5iC4kM4+mlWjNZ2YSdGSw1+aOoQLBkgFUQUc=
+github.com/kwangsing3/http_methods_golang v0.3.0 h1:uMn+1eIJyRfhlYR4e4mtPX8FMwCjCPjZ2yJhkvQgnrI=
+github.com/kwangsing3/http_methods_golang v0.3.0/go.mod h1:lUAJ0MI5iC4kM4+mlWjNZ2YSdGSw1+aOoQLBkgFUQUc=
+github.com/kwangsing3/http_methods_golang v0.3.1 h1:pSWCj8U9KxpiDxBqpR3KY9ZHXLDGEZTpBL1JzJ/+fps=
+github.com/kwangsing3/http_methods_golang v0.3.1/go.mod h1:lUAJ0MI5iC4kM4+mlWjNZ2YSdGSw1+aOoQLBkgFUQUc=
+github.com/kwangsing3/http_methods_golang v0.3.2 h1:IMyjRgm1cF5jadV8J2Pn+8+ihXj4KxjQr947oOqs1/o=
+github.com/kwangsing3/http_methods_golang v0.3.2/go.mod h1:lUAJ0MI5iC4kM4+mlWjNZ2YSdGSw1+aOoQLBkgFUQUc=

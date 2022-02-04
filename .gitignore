@@ -15,4 +15,4 @@
 # vendor/
 
 #ignore dev folder
-src/
+dev/main.go

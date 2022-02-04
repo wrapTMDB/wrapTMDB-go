@@ -1,8 +1,6 @@
 package wraptmdb
 
-import "encoding/json"
-
-var Router = struct {
+type routepath struct {
 	MOVIE          string
 	TV             string
 	ACCOUNT        string
@@ -26,65 +24,74 @@ var Router = struct {
 	EPISODE        string
 	EPISODEGROUPS  string
 	WATCHPROVIDERS string
-}{
-	MOVIE:          "movie/",
-	TV:             "tv/",
-	ACCOUNT:        "account/",
-	CERTIFICATION:  "certification/",
-	AUTHENTICATION: "Authentication/",
-	COLLECTION:     "colleciton/",
-	COMPANY:        "company/",
-	CONFIGURATION:  "Configuration/",
-	CREDIT:         "credit/",
-	DISCOVER:       "discover/",
-	FIND:           "find/",
-	GENRE:          "genre/",
-	GUESTSESSION:   "guest_session/",
-	KEYWORD:        "keyword/",
-	LIST:           "list/",
-	NETWORK:        "network/",
-	TRENDING:       "trending/",
-	PEOPLE:         "person/",
-	REVIEWS:        "reviews/",
-	SEARCH:         "search/",
-	EPISODE:        "episode/",
-	EPISODEGROUPS:  "episode_group/",
-	WATCHPROVIDERS: "watch/providers/",
+}
+type common struct {
+	TOKEN    string
+	BASE_URL string
+	HEADER   map[string]string
+	Route    routepath
 }
 
-var header = map[string]string{
-	"User-Agent": "",
-	"Referer":    "",
+var c_module = common{
+	TOKEN:    "",
+	BASE_URL: "https://api.themoviedb.org/3/",
+	HEADER: map[string]string{
+		"User-Agent": "",
+		"Referer":    "",
+	},
+	Route: routepath{
+		MOVIE:          "movie/",
+		TV:             "tv/",
+		ACCOUNT:        "account/",
+		CERTIFICATION:  "certification/",
+		AUTHENTICATION: "Authentication/",
+		COLLECTION:     "colleciton/",
+		COMPANY:        "company/",
+		CONFIGURATION:  "Configuration/",
+		CREDIT:         "credit/",
+		DISCOVER:       "discover/",
+		FIND:           "find/",
+		GENRE:          "genre/",
+		GUESTSESSION:   "guest_session/",
+		KEYWORD:        "keyword/",
+		LIST:           "list/",
+		NETWORK:        "network/",
+		TRENDING:       "trending/",
+		PEOPLE:         "person/",
+		REVIEWS:        "reviews/",
+		SEARCH:         "search/",
+		EPISODE:        "episode/",
+		EPISODEGROUPS:  "episode_group/",
+		WATCHPROVIDERS: "watch/providers/",
+	},
 }
-var common = map[string]interface{}{
-	"TOKEN":    "",
-	"BASE_URL": "https://api.themoviedb.org/3/",
-	"HEADER":   header,
-}
+var baseURL = c_module.GetURL()
 
 //#region function
+func Init(input string) {
+	c_module.TOKEN = input
+}
 
 //header
-func SetHeader(user_agent string, refer string) {
-	header["User_Agent"] = user_agent
-	header["Referer"] = refer
+func SetHeader(input map[string]string) {
+	c_module.HEADER = input
 }
-func GetHeader() ([]byte, error) {
-	return json.Marshal(header)
+func (c *common) GetHeader() map[string]string {
+	return c.HEADER
 }
 
 //token
-func Init(input string) {
-	common["TOKEN"] = input
+func (c *common) Init(input string) {
+	c.TOKEN = input
 }
 
-func GetToken() string {
-	return common["TOKEN"].(string)
+func (c *common) GetToken() string {
+	return c.TOKEN
 }
 
 //URL
-func GetURL() string {
-	return common["BASE_URL"].(string)
+func (c *common) GetURL() string {
+	return c.BASE_URL
 }
 
 //#endregion
