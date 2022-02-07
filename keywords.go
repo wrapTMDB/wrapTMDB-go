@@ -7,7 +7,7 @@ import "github.com/kwangsing3/http_methods_golang"
  *
  * Copyright (c) kwangsing3
  *
- * https://github.com/wrapTMDB/wrapTMDB-ts
+ * https://github.com/wrapTMDB/wrapTMDB-go
  *
  */
 
@@ -42,7 +42,7 @@ func (k *keywords) GetDetails(keyword_id string) interface{} {
  * @param {number|string} language(optional)
  * @param {boolean} include_adult(optional)
  * @returns JSON
- * @doc https://developers.themoviedb.org/3/keywords/get-keyword-details
+ * @doc https://developers.themoviedb.org/3/keywords/get-movies-by-keyword
  ********************/
 func (k *keywords) GetMovies(
 	keyword_id string,

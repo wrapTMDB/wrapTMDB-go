@@ -37,10 +37,10 @@ func (c *change) GetMovieChangeList(
 	var token = c_module.GetToken()
 	var header = c_module.GetHeader()
 	var targetURL string = baseURL + c_module.Route.MOVIE + "changes" + ` api_key=` + token
-	if start_date != "" && start_date != "" {
+	if start_date != "" {
 		targetURL += `&start_date=` + start_date
 	}
-	if end_date != "" && end_date != "" {
+	if end_date != "" {
 		targetURL += `&end_date=` + end_date
 	}
 
@@ -73,11 +73,11 @@ func (c *change) GetTVChangeList(
 	var token = c_module.GetToken()
 	var header = c_module.GetHeader()
 	var targetURL string = baseURL + c_module.Route.TV + "changes" + ` api_key=` + token
-	if start_date != "" && start_date != "" {
+	if start_date != "" {
 		targetURL += `&start_date=` + start_date
 	}
 
-	if end_date != "" && end_date != "" {
+	if end_date != "" {
 		targetURL += `&end_date=` + end_date
 	}
 
@@ -110,11 +110,11 @@ func (c *change) GetPersonChangesList(
 	var token = c_module.GetToken()
 	var header = c_module.GetHeader()
 	var targetURL string = baseURL + "person" + "/changes" + ` api_key=` + token
-	if start_date != "" && start_date != "" {
+	if start_date != "" {
 		targetURL += `&start_date=` + start_date
 	}
 
-	if end_date != "" && end_date != "" {
+	if end_date != "" {
 		targetURL += `&end_date=` + end_date
 	}
 

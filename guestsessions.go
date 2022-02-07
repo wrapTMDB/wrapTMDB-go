@@ -7,7 +7,7 @@ import "github.com/kwangsing3/http_methods_golang"
  *
  * Copyright (c) kwangsing3
  *
- * https://github.com/wrapTMDB/wrapTMDB-ts
+ * https://github.com/wrapTMDB/wrapTMDB-go
  *
  */
 
@@ -90,7 +90,7 @@ func (g *guestsessions) GetRatedTVShows(
  * @param {string} language (optional)
  * @param {string} sort_by (optional) "created_at.asc" or "created_at.desc"
  * @returns JSON
- * @doc https://developers.themoviedb.org/3/guest-sessions/get-guest-session-rated-tv-shows
+ * @doc https://developers.themoviedb.org/3/guest-sessions/get-gest-session-rated-tv-episodes
  ********************/
 func (g *guestsessions) GetRatedTVEpisodes(
 	guest_session_id string,

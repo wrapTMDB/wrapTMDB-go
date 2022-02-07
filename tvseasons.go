@@ -7,7 +7,7 @@ import "github.com/kwangsing3/http_methods_golang"
  *
  * Copyright (c) kwangsing3
  *
- * https://github.com/wrapTMDB/wrapTMDB-ts
+ * https://github.com/wrapTMDB/wrapTMDB-go
  *
  */
 
@@ -207,12 +207,12 @@ func (t *tvseason) GetCredits(
 
 /********************
  * 6.GET /tv/{tv_id}/season/{season_number}/external_ids
- * @description Get the TV season details by id.
+ * @description Get the external ids for a TV season. We currently support the following external sources.
  * @param {string} tv_id
  * @param {string} season_number
  * @param {string} language (optional)
  * @returns JSON
- * @doc https://developers.themoviedb.org/3/tv-seasons/get-tv-season-details
+ * @doc https://developers.themoviedb.org/3/tv-seasons/get-tv-season-external-ids
  ********************/
 func (t *tvseason) GetExternalIDs(
 	tv_id string,

@@ -7,7 +7,7 @@ import "github.com/kwangsing3/http_methods_golang"
  *
  * Copyright (c) kwangsing3
  *
- * https://github.com/wrapTMDB/wrapTMDB-ts
+ * https://github.com/wrapTMDB/wrapTMDB-go
  *
  */
 
@@ -42,7 +42,7 @@ func (g *genres) GetMovieList(language string) interface{} {
 }
 
 /********************
- * 2.GET /genre/movie/list
+ * 2.GET /genre/tv/list
  * @description Get the list of official genres for TV shows.
  * @param {string} language (optional)
  * @returns JSON
