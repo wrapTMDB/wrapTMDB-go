@@ -1,4 +1,4 @@
-package wraptmdb
+package wraptmdb_go
 
 import "github.com/kwangsing3/http_methods_golang"
 
@@ -32,7 +32,7 @@ func (c *collection) GetDetails(
 		c_module.Route.COLLECTION +
 		collection_id +
 		`?api_key=` + token
-	if language != "" && language != "" {
+	if language != "" {
 		targetURL += `&language=` + language
 	}
 
@@ -62,7 +62,7 @@ func (c *collection) GetImages(
 		collection_id +
 		"/images" +
 		`?api_key=` + token
-	if language != "" && language != "" {
+	if language != "" {
 		targetURL += `&language=` + language
 	}
 

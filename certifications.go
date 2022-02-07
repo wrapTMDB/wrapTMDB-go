@@ -1,4 +1,4 @@
-package wraptmdb
+package wraptmdb_go
 
 import "github.com/kwangsing3/http_methods_golang"
 
@@ -7,7 +7,7 @@ import "github.com/kwangsing3/http_methods_golang"
  *
  * Copyright (c) kwangsing3
  *
- * https://github.com/wrapTMDB/wrapTMDB-ts
+ * https://github.com/wrapTMDB/wrapTMDB-go
  *
  */
 type certifications struct{}
@@ -37,9 +37,9 @@ func (c *certifications) GetMovieCertifications() interface{} {
 
 /********************
  * 2.GET /certification/tv/list
- * @description Get your account details.
+ * @description Get an up to date list of the officially supported TV show certifications on TMDB.
  * @returns {any} JSON
- * @doc https://developers.themoviedb.org/3/account/get-account-details
+ * @doc https://developers.themoviedb.org/3/certifications/get-tv-certifications
  ********************/
 func (c *certifications) GetTVCertifications() interface{} {
 	var token = c_module.GetToken()

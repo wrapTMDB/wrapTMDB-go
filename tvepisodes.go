@@ -1,6 +1,10 @@
-package wraptmdb
+package wraptmdb_go
 
-import "github.com/kwangsing3/http_methods_golang"
+import (
+	"fmt"
+
+	"github.com/kwangsing3/http_methods_golang"
+)
 
 /*
  * The MIT License (MIT)
@@ -37,17 +41,17 @@ func (t *tvEpisodes) GetDetails(
 	var header = c_module.GetHeader()
 	var targetURL string = baseURL +
 		c_module.Route.TV +
-		`${tv_id}/` +
+		tv_id + `/` +
 		"season/" +
-		`${season_int}/` +
+		season_int + `/` +
 		c_module.Route.EPISODE +
-		`${episode_int}` +
-		` api_key=${token}`
+		episode_int +
+		` api_key=` + token
 	if language != "" {
-		targetURL += `&language=${language}`
+		targetURL += `&language=` + language
 	}
 	if append_to_response != "" {
-		targetURL += `&append_to_response=${append_to_response}`
+		targetURL += `&append_to_response=` + append_to_response
 	}
 
 	if token == "UnitTest_api_key" {
@@ -79,18 +83,18 @@ func (t *tvEpisodes) GetAccountStates(
 	var header = c_module.GetHeader()
 	var targetURL string = baseURL +
 		c_module.Route.TV +
-		`${tv_id}/` +
+		tv_id + `/` +
 		"season/" +
-		`${season_int}/` +
+		season_int + `/` +
 		c_module.Route.EPISODE +
-		`${episode_int}/` +
+		episode_int + `/` +
 		"account_states" +
-		` api_key=${token}`
+		` api_key=` + token
 	if guest_session_id != "" {
-		targetURL += `&guest_session_id=${guest_session_id}`
+		targetURL += `&guest_session_id=` + guest_session_id
 	}
 	if session_id != "" {
-		targetURL += `&session_id=${session_id}`
+		targetURL += `&session_id=` + session_id
 	}
 	if token == "UnitTest_api_key" {
 		return targetURL
@@ -120,17 +124,17 @@ func (t *tvEpisodes) GetChanges(
 	var targetURL string = baseURL +
 		c_module.Route.TV +
 		c_module.Route.EPISODE +
-		`${episode_id}` +
+		episode_id +
 		"/changes" +
-		` api_key=${token}`
+		` api_key=` + token
 	if start_date != "" {
-		targetURL += `&start_date=${start_date}`
+		targetURL += `&start_date=` + start_date
 	}
 	if end_date != "" {
-		targetURL += `&end_date=${end_date}`
+		targetURL += `&end_date=` + end_date
 	}
 	if page > 0 {
-		targetURL += `&page=${page}`
+		targetURL += `&page=` + fmt.Sprint(page)
 	}
 	if token == "UnitTest_api_key" {
 		return targetURL
@@ -159,15 +163,15 @@ func (t *tvEpisodes) GetCredits(
 	var header = c_module.GetHeader()
 	var targetURL string = baseURL +
 		c_module.Route.TV +
-		`${tv_id}/` +
+		tv_id + `/` +
 		"season/" +
-		`${season_int}/` +
+		season_int + `/` +
 		c_module.Route.EPISODE +
-		`${episode_int}` +
+		episode_int +
 		"/credits" +
-		` api_key=${token}`
+		` api_key=` + token
 	if language != "" {
-		targetURL += `&language=${language}`
+		targetURL += `&language=` + language
 	}
 	if token == "UnitTest_api_key" {
 		return targetURL
@@ -194,13 +198,13 @@ func (t *tvEpisodes) GetExternalIDs(
 	var header = c_module.GetHeader()
 	var targetURL string = baseURL +
 		c_module.Route.TV +
-		`${tv_id}/` +
+		tv_id + `/` +
 		"season/" +
-		`${season_int}/` +
+		season_int + `/` +
 		c_module.Route.EPISODE +
-		`${episode_int}` +
+		episode_int + `` +
 		"/external_ids" +
-		` api_key=${token}`
+		` api_key=` + token
 	if token == "UnitTest_api_key" {
 		return targetURL
 	}
@@ -226,13 +230,13 @@ func (t *tvEpisodes) GetImages(
 	var header = c_module.GetHeader()
 	var targetURL string = baseURL +
 		c_module.Route.TV +
-		`${tv_id}/` +
+		tv_id + `/` +
 		"season/" +
-		`${season_int}/` +
+		season_int + `/` +
 		c_module.Route.EPISODE +
-		`${episode_int}` +
+		episode_int +
 		"/images" +
-		` api_key=${token}`
+		` api_key=` + token
 
 	if token == "UnitTest_api_key" {
 		return targetURL
@@ -259,13 +263,13 @@ func (t *tvEpisodes) GetTranslations(
 	var header = c_module.GetHeader()
 	var targetURL string = baseURL +
 		c_module.Route.TV +
-		`${tv_id}/` +
+		tv_id + `/` +
 		"season/" +
-		`${season_int}/` +
+		season_int + `/` +
 		c_module.Route.EPISODE +
-		`${episode_int}` +
+		episode_int +
 		"/translations" +
-		` api_key=${token}`
+		` api_key=` + token
 
 	if token == "UnitTest_api_key" {
 		return targetURL
@@ -301,18 +305,18 @@ func (t *tvEpisodes) PostRateTVEpisode(
 	var header = c_module.GetHeader()
 	var targetURL string = baseURL +
 		c_module.Route.TV +
-		`${tv_id}/` +
+		tv_id + `/` +
 		"season/" +
-		`${season_int}/` +
+		season_int + `/` +
 		c_module.Route.EPISODE +
-		`${episode_int}` +
+		episode_int +
 		"/rating" +
-		` api_key=${token}`
+		` api_key=` + token
 	if guest_session_id != "" {
-		targetURL += `&guest_session_id=${guest_session_id}`
+		targetURL += `&guest_session_id=` + guest_session_id
 	}
 	if session_id != "" {
-		targetURL += `&session_id=${session_id}`
+		targetURL += `&session_id=` + session_id
 	}
 	if token == "UnitTest_api_key" {
 		return targetURL
@@ -343,19 +347,19 @@ func (t *tvEpisodes) DeleteDeleteRating(
 	var header = c_module.GetHeader()
 	var targetURL string = baseURL +
 		c_module.Route.TV +
-		`${tv_id}/` +
+		tv_id + `/` +
 		"season/" +
-		`${season_int}/` +
+		season_int + `/` +
 		c_module.Route.EPISODE +
-		`${episode_int}` +
+		episode_int +
 		"/rating" +
-		` api_key=${token}`
+		` api_key=` + token
 	if guest_session_id != "" {
-		targetURL += `&guest_session_id=${guest_session_id}`
+		targetURL += `&guest_session_id=` + guest_session_id
 	}
 
 	if session_id != "" {
-		targetURL += `&session_id=${session_id}`
+		targetURL += `&session_id=` + session_id
 	}
 
 	if token == "UnitTest_api_key" {
@@ -385,15 +389,15 @@ func (t *tvEpisodes) GetVideos(
 	var header = c_module.GetHeader()
 	var targetURL string = baseURL +
 		c_module.Route.TV +
-		`${tv_id}/` +
+		tv_id + `/` +
 		"season/" +
-		`${season_int}/` +
+		season_int + `/` +
 		c_module.Route.EPISODE +
-		`${episode_int}` +
+		episode_int +
 		"/videos" +
-		` api_key=${token}`
+		` api_key=` + token
 	if language != "" {
-		targetURL += `&language=${language}`
+		targetURL += `&language=` + language
 	}
 	if token == "UnitTest_api_key" {
 		return targetURL

@@ -1,4 +1,4 @@
-package wraptmdb
+package wraptmdb_go
 
 import "github.com/kwangsing3/http_methods_golang"
 
@@ -7,7 +7,7 @@ import "github.com/kwangsing3/http_methods_golang"
  *
  * Copyright (c) kwangsing3
  *
- * https://github.com/wrapTMDB/wrapTMDB-ts
+ * https://github.com/wrapTMDB/wrapTMDB-go
  *
  */
 type find struct{}

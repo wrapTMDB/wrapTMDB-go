@@ -1,4 +1,4 @@
-package wraptmdb
+package wraptmdb_go
 
 import "github.com/kwangsing3/http_methods_golang"
 
@@ -7,7 +7,7 @@ import "github.com/kwangsing3/http_methods_golang"
  *
  * Copyright (c) kwangsing3
  *
- * https //github.com/wrapTMDB/wrapTMDB-ts
+ * https://github.com/wrapTMDB/wrapTMDB-go
  *
  */
 type configuration struct{}
@@ -23,8 +23,8 @@ var Configuration configuration
  * @returns JSON
  * @example To build an image URL, you will need 3 pieces of data. The base_url, size and file_path.
  * Simply combine them all and you will have a fully qualified URL. Here’s an example URL
- * https //image.tmdb.org/t/p/w500/8uO0gUM8aNqYLs1OsTBQiXu0fEv.jpg
- * @doc https //developers.themoviedb.org/3/changes/get-person-change-list
+ * https://image.tmdb.org/t/p/w500/8uO0gUM8aNqYLs1OsTBQiXu0fEv.jpg
+ * @doc https://developers.themoviedb.org/3/configuration/get-api-configuration
  ********************/
 func (c *configuration) GetAPIConfiguration() interface{} {
 	var token = c_module.GetToken()
@@ -42,7 +42,7 @@ func (c *configuration) GetAPIConfiguration() interface{} {
  * 2.GET /configuration/countries
  * @description Get the list of countries (ISO 3166-1 tags) used throughout TMDB.
  * @returns JSON
- * @doc https //developers.themoviedb.org/3/configuration/get-countries
+ * @doc https://developers.themoviedb.org/3/configuration/get-countries
  ********************/
 func (c *configuration) GetCountries() interface{} {
 	var token = c_module.GetToken()
@@ -62,7 +62,7 @@ func (c *configuration) GetCountries() interface{} {
  * 3.GET /configuration/jobs
  * @description Get a list of the jobs and departments we use on TMDB.
  * @returns JSON
- * @doc https //developers.themoviedb.org/3/configuration/get-jobs
+ * @doc https://developers.themoviedb.org/3/configuration/get-jobs
  ********************/
 func (c *configuration) GetJobs() interface{} {
 	var token = c_module.GetToken()
@@ -79,7 +79,7 @@ func (c *configuration) GetJobs() interface{} {
  * 4.GET /configuration/languages
  * @description Get the list of languages (ISO 639-1 tags) used throughout TMDB.
  * @returns JSON
- * @doc https //developers.themoviedb.org/3/configuration/get-languages
+ * @doc https://developers.themoviedb.org/3/configuration/get-languages
  ********************/
 func (c *configuration) GetLanguages() interface{} {
 	var token = c_module.GetToken()
@@ -99,7 +99,7 @@ func (c *configuration) GetLanguages() interface{} {
  * 5.GET /configuration/primary_translations
  * @description Get a list of the officially supported translations on TMDB.
  * @returns JSON
- * @doc https //developers.themoviedb.org/3/configuration/get-primary-translations
+ * @doc https://developers.themoviedb.org/3/configuration/get-primary-translations
  ********************/
 func (c *configuration) GetPrimaryTranslations() interface{} {
 	var token = c_module.GetToken()
@@ -119,7 +119,7 @@ func (c *configuration) GetPrimaryTranslations() interface{} {
  * 6.GET /configuration/timezones
  * @description Get the list of timezones used throughout TMDB.
  * @returns JSON
- * @doc https //developers.themoviedb.org/3/configuration/get-timezones
+ * @doc https://developers.themoviedb.org/3/configuration/get-timezones
  ********************/
 func (c *configuration) GetTimezones() interface{} {
 	var token = c_module.GetToken()

@@ -1,4 +1,4 @@
-package wraptmdb
+package wraptmdb_go
 
 import "github.com/kwangsing3/http_methods_golang"
 
@@ -7,7 +7,7 @@ import "github.com/kwangsing3/http_methods_golang"
  *
  * Copyright (c) kwangsing3
  *
- * https://github.com/wrapTMDB/wrapTMDB-ts
+ * https://github.com/wrapTMDB/wrapTMDB-go
  *
  */
 
@@ -25,9 +25,9 @@ var Watchproviders watchproviders
 func (w *watchproviders) GetAvailableRegions(language string) interface{} {
 	var token = c_module.GetToken()
 	var header = c_module.GetHeader()
-	var targetURL string = baseURL + c_module.Route.WATCHPROVIDERS + "regions" + ` api_key=${token}`
+	var targetURL string = baseURL + c_module.Route.WATCHPROVIDERS + "regions" + ` api_key=` + token
 	if language != "" {
-		targetURL += `&language=${language}`
+		targetURL += `&language=` + language
 	}
 
 	if token == "UnitTest_api_key" {
@@ -55,12 +55,12 @@ func (w *watchproviders) GetMovieProviders(
 	var targetURL string = baseURL +
 		c_module.Route.WATCHPROVIDERS +
 		c_module.Route.MOVIE +
-		` api_key=${token}`
+		` api_key=` + token
 	if language != "" {
-		targetURL += `&language=${language}`
+		targetURL += `&language=` + language
 	}
 	if watch_region != "" {
-		targetURL += `&watch_region=${watch_region}`
+		targetURL += `&watch_region=` + watch_region
 	}
 	if token == "UnitTest_api_key" {
 		return targetURL
@@ -84,12 +84,12 @@ func (w *watchproviders) GetTVProviders(language string, watch_region string) in
 	var targetURL string = baseURL +
 		c_module.Route.WATCHPROVIDERS +
 		c_module.Route.TV +
-		` api_key=${token}`
+		` api_key=` + token
 	if language != "" {
-		targetURL += `&language=${language}`
+		targetURL += `&language=` + language
 	}
 	if watch_region != "" {
-		targetURL += `&watch_region=${watch_region}`
+		targetURL += `&watch_region=` + watch_region
 	}
 	if token == "UnitTest_api_key" {
 		return targetURL

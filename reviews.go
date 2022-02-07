@@ -1,4 +1,4 @@
-package wraptmdb
+package wraptmdb_go
 
 import "github.com/kwangsing3/http_methods_golang"
 
@@ -7,7 +7,7 @@ import "github.com/kwangsing3/http_methods_golang"
  *
  * Copyright (c) kwangsing3
  *
- * https://github.com/wrapTMDB/wrapTMDB-ts
+ * https://github.com/wrapTMDB/wrapTMDB-go
  *
  */
 
@@ -25,7 +25,7 @@ var Reviews reviews
 func (r *reviews) GetDetails(review_id string) interface{} {
 	var token = c_module.GetToken()
 	var header = c_module.GetHeader()
-	var targetURL string = baseURL + c_module.Route.REVIEWS + `${review_id}` + `?api_key=${token}`
+	var targetURL string = baseURL + c_module.Route.REVIEWS + review_id + `?api_key=` + token
 	if token == "UnitTest_api_key" {
 		return targetURL
 	}

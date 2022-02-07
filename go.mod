@@ -1,4 +1,4 @@
-module wraptmdb-go
+module wraptmdb_go
 
 go 1.17
 

@@ -1,4 +1,4 @@
-package wraptmdb
+package wraptmdb_go
 
 import "github.com/kwangsing3/http_methods_golang"
 
@@ -7,7 +7,7 @@ import "github.com/kwangsing3/http_methods_golang"
  *
  * Copyright (c) kwangsing3
  *
- * https://github.com/wrapTMDB/wrapTMDB-ts
+ * https://github.com/wrapTMDB/wrapTMDB-go
  *
  */
 
@@ -30,9 +30,9 @@ func (t *trending) GetTrending(media_type string, time_window string) interface{
 	var header = c_module.GetHeader()
 	var targetURL string = baseURL +
 		c_module.Route.TRENDING +
-		`${media_type}/` +
-		`${time_window}` +
-		`?api_key=${token}`
+		media_type + `/` +
+		time_window + `` +
+		`?api_key=` + token
 	if token == "UnitTest_api_key" {
 		return targetURL
 	}

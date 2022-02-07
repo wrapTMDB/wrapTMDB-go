@@ -1,4 +1,4 @@
-package wraptmdb
+package wraptmdb_go
 
 import "github.com/kwangsing3/http_methods_golang"
 
@@ -19,7 +19,7 @@ var Companies companies
  * @description Get a companies details by id.
  * @param { int|string} company_id
  * @returns JSON
- * @doc https //developers.themoviedb.org/3/companies/get-company-details
+ * @doc https://developers.themoviedb.org/3/companies/get-company-details
  ********************/
 func (c *companies) GetDetails(company_id string) interface{} {
 	var token = c_module.GetToken()
@@ -37,7 +37,7 @@ func (c *companies) GetDetails(company_id string) interface{} {
  * @description Get the alternative names of a company.
  * @param { int|string} company_id
  * @returns JSON
- * @doc https //developers.themoviedb.org/3/companies/get-company-details
+ * @doc https://developers.themoviedb.org/3/companies/get-company-alternative-names
  ********************/
 func (c *companies) GetAlternativeNames(company_id string) interface{} {
 	var token = c_module.GetToken()
@@ -59,7 +59,7 @@ func (c *companies) GetAlternativeNames(company_id string) interface{} {
  * @description Get a companies logos by id.
  * @param { int|string} company_id
  * @returns JSON
- * @doc https //developers.themoviedb.org/3/companies/get-company-details
+ * @doc https://developers.themoviedb.org/3/companies/get-company-images
  ********************/
 func (c *companies) GetImages(company_id string) interface{} {
 	var token = c_module.GetToken()

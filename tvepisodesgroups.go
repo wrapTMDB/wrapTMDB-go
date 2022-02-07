@@ -1,4 +1,4 @@
-package wraptmdb
+package wraptmdb_go
 
 import "github.com/kwangsing3/http_methods_golang"
 
@@ -7,7 +7,7 @@ import "github.com/kwangsing3/http_methods_golang"
  *
  * Copyright (c) kwangsing3
  *
- * https://github.com/wrapTMDB/wrapTMDB-ts
+ * https://github.com/wrapTMDB/wrapTMDB-go
  *
  */
 type tvepisodesgroups struct{}
@@ -34,10 +34,10 @@ func (t *tvepisodesgroups) GetDetails(id string, language string) interface{} {
 	var targetURL string = baseURL +
 		c_module.Route.TV +
 		c_module.Route.EPISODEGROUPS +
-		`${id}` +
-		`?api_key=${token}`
+		`` + id +
+		`?api_key=` + token
 	if language != "" {
-		targetURL += `&language=${language}`
+		targetURL += `&language=` + language
 	}
 	if token == "UnitTest_api_key" {
 		return targetURL

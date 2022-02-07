@@ -1,4 +1,4 @@
-package wraptmdb
+package wraptmdb_go
 
 /*
  * The MIT License (MIT)
@@ -197,7 +197,7 @@ func (t *tv) GetContentRatings(tv_id string, language string) interface{} {
  * @param { int string} tv_id  TV ID in TMDB
  * @param {string} language(optional)  Language to request
  * @returns JSON
- * @doc https://developers.themoviedb.org/3/movies/get-movie-changes
+ * @doc https://developers.themoviedb.org/3/movies/get-movie-credits
  ********************/
 func (t *tv) GetCredits(tv_id string, language string) interface{} {
 	var token = c_module.GetToken()

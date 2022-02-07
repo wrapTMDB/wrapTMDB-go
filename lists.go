@@ -1,13 +1,17 @@
-package wraptmdb
+package wraptmdb_go
 
-import "github.com/kwangsing3/http_methods_golang"
+import (
+	"strconv"
+
+	"github.com/kwangsing3/http_methods_golang"
+)
 
 /*
  * The MIT License (MIT)
  *
  * Copyright (c) kwangsing3
  *
- * https://github.com/wrapTMDB/wrapTMDB-ts
+ * https://github.com/wrapTMDB/wrapTMDB-go
  *
  */
 type list struct{}
@@ -25,9 +29,9 @@ var Lists list
 func (l *list) GetDetails(list_id string, language string) interface{} {
 	var token = c_module.GetToken()
 	var header = c_module.GetHeader()
-	var targetURL string = baseURL + c_module.Route.LIST + `${list_id}` + `?api_key=${token}`
+	var targetURL string = baseURL + c_module.Route.LIST + list_id + `?api_key=` + token
 	if language != "" {
-		targetURL += `&language=${language}`
+		targetURL += `&language=` + language
 	}
 
 	if token == "UnitTest_api_key" {
@@ -53,11 +57,11 @@ func (l *list) GetCheckItemStatus(
 	var header = c_module.GetHeader()
 	var targetURL string = baseURL +
 		c_module.Route.LIST +
-		`${list_id}/` +
+		list_id + `/` +
 		"item_status" +
-		`?api_key=${token}`
+		`?api_key=` + token
 	if movie_id != "" {
-		targetURL += `&movie_id=${movie_id}`
+		targetURL += `&movie_id=` + movie_id
 	}
 	if token == "UnitTest_api_key" {
 		return targetURL
@@ -82,9 +86,9 @@ func (l *list) GetCheckItemStatus(
 func (l *list) PostCreateList(query []byte, session_id string) interface{} {
 	var token = c_module.GetToken()
 	var header = c_module.GetHeader()
-	var targetURL string = baseURL + c_module.Route.LIST + `?api_key=${token}`
+	var targetURL string = baseURL + c_module.Route.LIST + `?api_key=` + token
 	if session_id != "" {
-		targetURL += `&session_id=${session_id}`
+		targetURL += `&session_id=` + session_id
 	}
 
 	if token == "UnitTest_api_key" {
@@ -115,10 +119,10 @@ func (l *list) PostAddMovie(
 	var header = c_module.GetHeader()
 	var targetURL string = baseURL +
 		c_module.Route.LIST +
-		`${list_id}/add_item` +
-		`?api_key=${token}`
+		list_id + `/add_item` +
+		`?api_key=` + token
 	if session_id != "" {
-		targetURL += `&session_id=${session_id}`
+		targetURL += `&session_id=` + session_id
 	}
 
 	if token == "UnitTest_api_key" {
@@ -149,10 +153,10 @@ func (l *list) PostRemoveMovie(
 	var header = c_module.GetHeader()
 	var targetURL string = baseURL +
 		c_module.Route.LIST +
-		`${list_id}/remove_item` +
-		`?api_key=${token}`
+		list_id + `/remove_item` +
+		`?api_key=` + token
 	if session_id != "" {
-		targetURL += `&session_id=${session_id}`
+		targetURL += `&session_id=` + session_id
 	}
 
 	if token == "UnitTest_api_key" {
@@ -178,11 +182,11 @@ func (l *list) PostClearList(
 ) interface{} {
 	var token = c_module.GetToken()
 	var header = c_module.GetHeader()
-	var targetURL string = baseURL + c_module.Route.LIST + `${list_id}/clear` + `?api_key=${token}`
+	var targetURL string = baseURL + c_module.Route.LIST + list_id + `/clear` + `?api_key=` + token
 	if session_id != "" {
-		targetURL += `&session_id=${session_id}`
+		targetURL += `&session_id=` + session_id
 	}
-	targetURL += `&confirm=${confirm}`
+	targetURL += `&confirm=` + strconv.FormatBool(confirm)
 	if token == "UnitTest_api_key" {
 		return targetURL
 	}
@@ -204,9 +208,9 @@ func (l *list) DeleteDeleteList(
 ) interface{} {
 	var token = c_module.GetToken()
 	var header = c_module.GetHeader()
-	var targetURL string = baseURL + c_module.Route.LIST + `${list_id}` + `?api_key=${token}`
+	var targetURL string = baseURL + c_module.Route.LIST + list_id + `?api_key=` + token
 	if session_id != "" {
-		targetURL += `&session_id=${session_id}`
+		targetURL += `&session_id=` + session_id
 	}
 	if token == "UnitTest_api_key" {
 		return targetURL

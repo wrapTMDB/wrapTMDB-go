@@ -1,6 +1,10 @@
-package wraptmdb
+package wraptmdb_go
 
-import "github.com/kwangsing3/http_methods_golang"
+import (
+	"fmt"
+
+	"github.com/kwangsing3/http_methods_golang"
+)
 
 /*
  * The MIT License (MIT)
@@ -30,12 +34,12 @@ func (p *people) GetDetails(
 ) interface{} {
 	var token = c_module.GetToken()
 	var header = c_module.GetHeader()
-	var targetURL string = baseURL + c_module.Route.PEOPLE + `${person_id}` + ` api_key=${token}`
+	var targetURL string = baseURL + c_module.Route.PEOPLE + person_id + ` api_key=` + token
 	if language != "" {
-		targetURL += `&language=${language}`
+		targetURL += `&language=` + language
 	}
 	if append_to_response != "" {
-		targetURL += `&append_to_response=${append_to_response}`
+		targetURL += `&append_to_response=` + append_to_response
 	}
 	if token == "UnitTest_api_key" {
 		return targetURL
@@ -64,16 +68,16 @@ func (p *people) GetChanges(
 	var header = c_module.GetHeader()
 	var targetURL string = baseURL +
 		c_module.Route.PEOPLE +
-		`${person_id}/changes` +
-		` api_key=${token}`
+		person_id + `changes` +
+		` api_key=` + token
 	if start_date != "" {
-		targetURL += `&start_date=${start_date}`
+		targetURL += `&start_date=` + start_date
 	}
 	if end_date != "" {
-		targetURL += `&end_date=${end_date}`
+		targetURL += `&end_date=` + end_date
 	}
 	if page > 0 {
-		targetURL += `&page=${page}`
+		targetURL += `&page=` + fmt.Sprint(page)
 	}
 	if token == "UnitTest_api_key" {
 		return targetURL
@@ -98,10 +102,10 @@ func (p *people) GetMovieCredits(
 	var header = c_module.GetHeader()
 	var targetURL string = baseURL +
 		c_module.Route.PEOPLE +
-		`${person_id}/movie_credits` +
-		` api_key=${token}`
+		person_id + `movie_credits` +
+		` api_key=` + token
 	if language != "" {
-		targetURL += `&language=${language}`
+		targetURL += `&language=` + language
 	}
 	if token == "UnitTest_api_key" {
 		return targetURL
@@ -126,10 +130,10 @@ func (p *people) GetTVCredits(
 	var header = c_module.GetHeader()
 	var targetURL string = baseURL +
 		c_module.Route.PEOPLE +
-		`${person_id}/tv_credits` +
-		` api_key=${token}`
+		person_id + `tv_credits` +
+		` api_key=` + token
 	if language != "" {
-		targetURL += `&language=${language}`
+		targetURL += `&language=` + language
 	}
 	if token == "UnitTest_api_key" {
 		return targetURL
@@ -154,10 +158,10 @@ func (p *people) GetCombinedCredits(
 	var header = c_module.GetHeader()
 	var targetURL string = baseURL +
 		c_module.Route.PEOPLE +
-		`${person_id}/combined_credits` +
-		` api_key=${token}`
+		person_id + `combined_credits` +
+		` api_key=` + token
 	if language != "" {
-		targetURL += `&language=${language}`
+		targetURL += `&language=` + language
 	}
 	if token == "UnitTest_api_key" {
 		return targetURL
@@ -182,10 +186,10 @@ func (p *people) GetExternalIDs(
 	var header = c_module.GetHeader()
 	var targetURL string = baseURL +
 		c_module.Route.PEOPLE +
-		`${person_id}/external_ids` +
-		` api_key=${token}`
+		person_id + `external_ids` +
+		` api_key=` + token
 	if language != "" {
-		targetURL += `&language=${language}`
+		targetURL += `&language=` + language
 	}
 	if token == "UnitTest_api_key" {
 		return targetURL
@@ -206,8 +210,8 @@ func (p *people) GetImages(person_id string) interface{} {
 	var header = c_module.GetHeader()
 	var targetURL string = baseURL +
 		c_module.Route.PEOPLE +
-		`${person_id}/images` +
-		` api_key=${token}`
+		person_id + `images` +
+		` api_key=` + token
 	if token == "UnitTest_api_key" {
 		return targetURL
 	}
@@ -233,13 +237,13 @@ func (p *people) GetTaggedImages(
 	var header = c_module.GetHeader()
 	var targetURL string = baseURL +
 		c_module.Route.PEOPLE +
-		`${person_id}/tagged_images` +
-		` api_key=${token}`
+		person_id + `tagged_images` +
+		` api_key=` + token
 	if language != "" {
-		targetURL += `&language=${language}`
+		targetURL += `&language=` + language
 	}
 	if page > 0 {
-		targetURL += `&page=${page}`
+		targetURL += `&page=` + fmt.Sprint(page)
 	}
 	if token == "UnitTest_api_key" {
 		return targetURL
@@ -264,10 +268,10 @@ func (p *people) GetTranslations(
 	var header = c_module.GetHeader()
 	var targetURL string = baseURL +
 		c_module.Route.PEOPLE +
-		`${person_id}/translations` +
-		` api_key=${token}`
+		person_id + `translations` +
+		` api_key=` + token
 	if language != "" {
-		targetURL += `&language=${language}`
+		targetURL += `&language=` + language
 	}
 	if token == "UnitTest_api_key" {
 		return targetURL
@@ -286,9 +290,9 @@ func (p *people) GetTranslations(
 func (p *people) GetLatest(language string) interface{} {
 	var token = c_module.GetToken()
 	var header = c_module.GetHeader()
-	var targetURL string = baseURL + c_module.Route.PEOPLE + "latest" + ` api_key=${token}`
+	var targetURL string = baseURL + c_module.Route.PEOPLE + "latest" + ` api_key=` + token
 	if language != "" {
-		targetURL += `&language=${language}`
+		targetURL += `&language=` + language
 	}
 	if token == "UnitTest_api_key" {
 		return targetURL
@@ -308,12 +312,12 @@ func (p *people) GetLatest(language string) interface{} {
 func (p *people) GetPopular(language string, page int) interface{} {
 	var token = c_module.GetToken()
 	var header = c_module.GetHeader()
-	var targetURL string = baseURL + c_module.Route.PEOPLE + "popular" + ` api_key=${token}`
+	var targetURL string = baseURL + c_module.Route.PEOPLE + "popular" + ` api_key=` + token
 	if language != "" {
-		targetURL += `&language=${language}`
+		targetURL += `&language=` + language
 	}
 	if page > 0 {
-		targetURL += `&page=${page}`
+		targetURL += `&page=` + fmt.Sprint(page)
 	}
 	if token == "UnitTest_api_key" {
 		return targetURL

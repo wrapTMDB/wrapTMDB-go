@@ -1,13 +1,17 @@
-package wraptmdb
+package wraptmdb_go
 
-import "github.com/kwangsing3/http_methods_golang"
+import (
+	"strconv"
+
+	"github.com/kwangsing3/http_methods_golang"
+)
 
 /*
  * The MIT License (MIT)
  *
  * Copyright (c) kwangsing3
  *
- * https://github.com/wrapTMDB/wrapTMDB-ts
+ * https://github.com/wrapTMDB/wrapTMDB-go
  *
  */
 
@@ -25,7 +29,7 @@ var KeyWords keywords
 func (k *keywords) GetDetails(keyword_id string) interface{} {
 	var token = c_module.GetToken()
 	var header = c_module.GetHeader()
-	var targetURL string = baseURL + c_module.Route.KEYWORD + `${keyword_id}` + `?api_key=${token}`
+	var targetURL string = baseURL + c_module.Route.KEYWORD + keyword_id + `?api_key=` + token
 
 	if token == "UnitTest_api_key" {
 		return targetURL
@@ -42,7 +46,7 @@ func (k *keywords) GetDetails(keyword_id string) interface{} {
  * @param {number|string} language(optional)
  * @param {boolean} include_adult(optional)
  * @returns JSON
- * @doc https://developers.themoviedb.org/3/keywords/get-keyword-details
+ * @doc https://developers.themoviedb.org/3/keywords/get-movies-by-keyword
  ********************/
 func (k *keywords) GetMovies(
 	keyword_id string,
@@ -53,14 +57,14 @@ func (k *keywords) GetMovies(
 	var header = c_module.GetHeader()
 	var targetURL string = baseURL +
 		c_module.Route.KEYWORD +
-		`${keyword_id}/` +
+		keyword_id + `/` +
 		"movies" +
-		`?api_key=${token}`
+		`?api_key=` + token
 	if language != "" {
-		targetURL += `&language=${language}`
+		targetURL += `&language=` + language
 	}
 
-	targetURL += `&include_adult=${include_adult}`
+	targetURL += `&include_adult=` + strconv.FormatBool(include_adult)
 	if token == "UnitTest_api_key" {
 		return targetURL
 	}

@@ -1,6 +1,11 @@
-package wraptmdb
+package wraptmdb_go
 
-import "github.com/kwangsing3/http_methods_golang"
+import (
+	"fmt"
+	"strconv"
+
+	"github.com/kwangsing3/http_methods_golang"
+)
 
 /*
  * The MIT License (MIT)
@@ -29,12 +34,12 @@ func (s *search) GetSearchCompanies(query string, page int) interface{} {
 	var targetURL string = baseURL +
 		c_module.Route.SEARCH +
 		c_module.Route.COMPANY +
-		`?api_key=${token}`
+		`?api_key=` + token
 	if query != "" {
-		targetURL += `&query=${query}`
+		targetURL += `&query=` + query
 	}
 	if page > 0 {
-		targetURL += `&page=${page}`
+		targetURL += `&page=` + fmt.Sprint(page)
 	}
 	if token == "UnitTest_api_key" {
 		return targetURL
@@ -62,15 +67,15 @@ func (s *search) GetSearchCollections(
 	var targetURL string = baseURL +
 		c_module.Route.SEARCH +
 		c_module.Route.COLLECTION +
-		`?api_key=${token}`
+		`?api_key=` + token
 	if query != "" {
-		targetURL += `&query=${query}`
+		targetURL += `&query=` + query
 	}
 	if language != "" {
-		targetURL += `&language=${language}`
+		targetURL += `&language=` + language
 	}
 	if page > 0 {
-		targetURL += `&page=${page}`
+		targetURL += `&page=` + fmt.Sprint(page)
 	}
 	if token == "UnitTest_api_key" {
 		return targetURL
@@ -93,12 +98,12 @@ func (s *search) GetSearchKeywords(query string, page int) interface{} {
 	var targetURL string = baseURL +
 		c_module.Route.SEARCH +
 		c_module.Route.KEYWORD +
-		`?api_key=${token}`
+		`?api_key=` + token
 	if query != "" {
-		targetURL += `&query=${query}`
+		targetURL += `&query=` + query
 	}
 	if page > 0 {
-		targetURL += `&page=${page}`
+		targetURL += `&page=` + fmt.Sprint(page)
 	}
 	if token == "UnitTest_api_key" {
 		return targetURL
@@ -133,25 +138,25 @@ func (s *search) GetSearchMovies(
 	var targetURL string = baseURL +
 		c_module.Route.SEARCH +
 		c_module.Route.MOVIE +
-		`?api_key=${token}`
+		`?api_key=` + token
 	if query != "" {
-		targetURL += `&query=${query}`
+		targetURL += `&query=` + query
 	}
 	if language != "" {
-		targetURL += `&language=${language}`
+		targetURL += `&language=` + language
 	}
 	if page > 0 {
-		targetURL += `&page=${page}`
+		targetURL += `&page=` + fmt.Sprint(page)
 	}
-	targetURL += `&include_adult=${include_adult}`
+	targetURL += `&include_adult=` + strconv.FormatBool(include_adult)
 	if region != "" {
-		targetURL += `&region=${region}`
+		targetURL += `&region=` + region
 	}
 	if year > 0 {
-		targetURL += `&year=${year}`
+		targetURL += `&year=` + fmt.Sprint(year)
 	}
 	if region != "" {
-		targetURL += `&primary_release_year=${primary_release_year}`
+		targetURL += `&primary_release_year=` + fmt.Sprint(primary_release_year)
 	}
 	if token == "UnitTest_api_key" {
 		return targetURL
@@ -181,19 +186,19 @@ func (s *search) GetMultiSearch(
 ) interface{} {
 	var token = c_module.GetToken()
 	var header = c_module.GetHeader()
-	var targetURL string = baseURL + c_module.Route.SEARCH + "multi" + `?api_key=${token}`
+	var targetURL string = baseURL + c_module.Route.SEARCH + "multi" + `?api_key=` + token
 	if query != "" {
-		targetURL += `&query=${query}`
+		targetURL += `&query=` + query
 	}
 	if language != "" {
-		targetURL += `&language=${language}`
+		targetURL += `&language=` + language
 	}
 	if page > 0 {
-		targetURL += `&page=${page}`
+		targetURL += `&page=` + fmt.Sprint(page)
 	}
-	targetURL += `&include_adult=${include_adult}`
+	targetURL += `&include_adult=` + strconv.FormatBool(include_adult)
 	if region != "" {
-		targetURL += `&region=${region}`
+		targetURL += `&region=` + region
 	}
 	if token == "UnitTest_api_key" {
 		return targetURL
@@ -225,19 +230,19 @@ func (s *search) GetSearchPeople(
 	var targetURL string = baseURL +
 		c_module.Route.SEARCH +
 		c_module.Route.PEOPLE +
-		`?api_key=${token}`
+		`?api_key=` + token
 	if query != "" {
-		targetURL += `&query=${query}`
+		targetURL += `&query=` + query
 	}
 	if language != "" {
-		targetURL += `&language=${language}`
+		targetURL += `&language=` + language
 	}
 	if page > 0 {
-		targetURL += `&page=${page}`
+		targetURL += `&page=` + fmt.Sprint(page)
 	}
-	targetURL += `&include_adult=${include_adult}`
+	targetURL += `&include_adult=` + strconv.FormatBool(include_adult)
 	if region != "" {
-		targetURL += `&region=${region}`
+		targetURL += `&region=` + region
 	}
 	if token == "UnitTest_api_key" {
 		return targetURL
@@ -266,20 +271,20 @@ func (s *search) GetSearchTVShows(
 ) interface{} {
 	var token = c_module.GetToken()
 	var header = c_module.GetHeader()
-	var targetURL string = baseURL + c_module.Route.SEARCH + c_module.Route.TV + `?api_key=${token}`
+	var targetURL string = baseURL + c_module.Route.SEARCH + c_module.Route.TV + `?api_key=` + token
 	if query != "" {
-		targetURL += `&query=${query}`
+		targetURL += `&query=` + query
 	}
 	if language != "" {
-		targetURL += `&language=${language}`
+		targetURL += `&language=` + language
 	}
 	if page > 0 {
-		targetURL += `&page=${page}`
+		targetURL += `&page=` + fmt.Sprint(page)
 	}
-	targetURL += `&include_adult=${include_adult}`
+	targetURL += `&include_adult=` + strconv.FormatBool(include_adult)
 
 	if first_air_date_year > 0 {
-		targetURL += `&first_air_date_year=${first_air_date_year}`
+		targetURL += `&first_air_date_year=` + fmt.Sprint(first_air_date_year)
 	}
 	if token == "UnitTest_api_key" {
 		return targetURL

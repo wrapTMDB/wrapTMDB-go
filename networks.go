@@ -1,4 +1,4 @@
-package wraptmdb
+package wraptmdb_go
 
 import "github.com/kwangsing3/http_methods_golang"
 
@@ -25,7 +25,7 @@ var Network network
 func (n *network) GetDetails(network_id string) interface{} {
 	var token = c_module.GetToken()
 	var header = c_module.GetHeader()
-	var targetURL string = baseURL + c_module.Route.NETWORK + `${network_id}` + `?api_key=${token}`
+	var targetURL string = baseURL + c_module.Route.NETWORK + network_id + `?api_key=` + token
 	if token == "UnitTest_api_key" {
 		return targetURL
 	}
@@ -45,9 +45,9 @@ func (n *network) GetAlternativeNames(network_id string) interface{} {
 	var header = c_module.GetHeader()
 	var targetURL string = baseURL +
 		c_module.Route.NETWORK +
-		`${network_id}` +
+		network_id +
 		"/alternative_names" +
-		`?api_key=${token}`
+		`?api_key=` + token
 	if token == "UnitTest_api_key" {
 		return targetURL
 	}
@@ -67,9 +67,9 @@ func (n *network) GetImages(network_id string) interface{} {
 	var header = c_module.GetHeader()
 	var targetURL string = baseURL +
 		c_module.Route.NETWORK +
-		`${network_id}` +
+		network_id +
 		"/images" +
-		`?api_key=${token}`
+		`?api_key=` + token
 	if token == "UnitTest_api_key" {
 		return targetURL
 	}

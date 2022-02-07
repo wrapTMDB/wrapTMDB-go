@@ -1,4 +1,4 @@
-package wraptmdb
+package wraptmdb_go
 
 import (
 	"fmt"

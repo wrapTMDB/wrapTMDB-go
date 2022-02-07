@@ -1,4 +1,4 @@
-package wraptmdb
+package wraptmdb_go
 
 import (
 	"github.com/kwangsing3/http_methods_golang"
