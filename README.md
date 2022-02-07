@@ -1,7 +1,7 @@
 
 <h3 align="right">
-<a href="https://github.com/wrapTMDB/wraptmdb-go">Github page</a> |
-<a href="https://pkg.go.dev/github.com/wrapTMDB/wraptmdb-go">pkg.go</a>  
+<a href="https://github.com/wrapTMDB/wraptmdb_go">Github page</a> |
+<a href="https://pkg.go.dev/github.com/wrapTMDB/wraptmdb_go">pkg.go</a>  
 </h3>
 
 
@@ -38,7 +38,7 @@ ___
 ### Install:
 
 ```bash
-$go get github.com/wrapTMDB/wraptmdb-go
+$go get github.com/wrapTMDB/wraptmdb_go
 ```
 
 Before use this tool, make sure already have your [api_key](https://developers.themoviedb.org/3/getting-started/authentication).
@@ -49,7 +49,7 @@ package main
 
 import (
 	"fmt"
-	wraptmdb "github.com/wrapTMDB/wraptmdb-go"
+	wraptmdb "github.com/wrapTMDB/wraptmdb_go"
 )
 
 func main() {
@@ -91,7 +91,7 @@ data := wrapTMDB.TVseasons.GetImages("54321", "65421", "en-US");
 
 # Join Development ?
 ```bash
-$git clone https://github.com/wrapTMDB/wraptmdb-go &&
+$git clone https://github.com/wrapTMDB/wraptmdb_go &&
 npm install ||
 touch src/main.go
 ```

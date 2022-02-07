@@ -1,4 +1,4 @@
-module github.com/wrapTMDB/wraptmdb-go
+module github.com/wrapTMDB/wraptmdb_go 
 
 go 1.17
 

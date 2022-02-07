@@ -12,7 +12,7 @@ import (
  *
  * Copyright (c) kwangsing3
  *
- * https://github.com/wrapTMDB/wraptmdb-go
+ * https://github.com/wrapTMDB/wraptmdb_go
  *
  */
 
