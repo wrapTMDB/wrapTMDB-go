@@ -5,7 +5,7 @@ package wraptmdb_go
  *
  * Copyright (c) kwangsing3
  *
- * https://github.com/wrapTMDB/wrapTMDB-go
+ * https://github.com/wrapTMDB/wrapTMDB_go
  *
  */
 import (

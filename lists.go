@@ -11,7 +11,7 @@ import (
  *
  * Copyright (c) kwangsing3
  *
- * https://github.com/wrapTMDB/wrapTMDB-go
+ * https://github.com/wrapTMDB/wrapTMDB_go
  *
  */
 type list struct{}

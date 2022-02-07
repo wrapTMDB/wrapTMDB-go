@@ -1,6 +1,6 @@
 
 <h3 align="right">
-<a href="https://github.com/wrapTMDB/wrapTMDB-go">Github page</a> |
+<a href="https://github.com/wrapTMDB/wrapTMDB_go">Github page</a> |
 <a href="https://pkg.go.dev/github.com/wrapTMDB/wraptmdb_go">pkg.go</a>  
 </h3>
 
@@ -49,14 +49,14 @@ package main
 
 import (
 	"fmt"
-	wraptmdb "wraptmdb-go"
+	wraptmdb "wraptmdb_go"
 )
 
 func main() {
 	//initialize
 	wraptmdb.Init("Your api_key")
 	wraptmdb.SetHeader(map[string]string{
-		"User-Agent": "wraptmdb-go dev",
+		"User-Agent": "wraptmdb_go dev",
 		"Referer":    "wraptmdb-go",
 	})
 	//call function
@@ -90,7 +90,7 @@ data := wrapTMDB.TVseasons.GetImages("54321", "65421", "en-US");
 
 # 開発に参加する ?
 ```bash
-$git clone https://github.com/wrapTMDB/wrapTMDB-go &&
+$git clone https://github.com/wrapTMDB/wrapTMDB_go &&
 
 npm install ||
 
