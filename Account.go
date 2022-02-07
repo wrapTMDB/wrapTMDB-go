@@ -1,4 +1,4 @@
-package wraptmdb_go
+package wraptmdb
 
 import (
 	"fmt"
@@ -11,7 +11,7 @@ import (
  *
  * Copyright (c) kwangsing3
  *
- * https://github.com/wrapTMDB/wrapTMDB-go
+ * https://github.com/wrapTMDB/wraptmdb-go
  *
  */
 type account struct{}

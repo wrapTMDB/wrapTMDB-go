@@ -1,4 +1,4 @@
-package wraptmdb_go
+package wraptmdb
 
 import (
 	"fmt"
@@ -11,7 +11,7 @@ import (
  *
  * Copyright (c) kwangsing3
  *
- * https  //github.com/wrapTMDB/wrapTMDB-ts
+ * https://github.com/wrapTMDB/wraptmdb-go
  *
  */
 type change struct{}
@@ -27,7 +27,7 @@ var Changes change
  * @param {int|string} end_date (optional)
  * @param {int} page (optional)
  * @returns JSON
- * @doc https  //developers.themoviedb.org/3/changes/get-movie-change-list
+ * @doc https://developers.themoviedb.org/3/changes/get-movie-change-list
  ********************/
 func (c *change) GetMovieChangeList(
 	start_date string,
@@ -63,7 +63,7 @@ func (c *change) GetMovieChangeList(
  * @param {int|string} end_date (optional)
  * @param {int} page (optional)
  * @returns JSON
- * @doc https  //developers.themoviedb.org/3/changes/get-tv-change-list
+ * @doc https://developers.themoviedb.org/3/changes/get-tv-change-list
  ********************/
 func (c *change) GetTVChangeList(
 	start_date string,
@@ -100,7 +100,7 @@ func (c *change) GetTVChangeList(
  * @param {int|string} end_date (optional)
  * @param {int} page (optional)
  * @returns JSON
- * @doc https  //developers.themoviedb.org/3/changes/get-person-change-list
+ * @doc https://developers.themoviedb.org/3/changes/get-person-change-list
  ********************/
 func (c *change) GetPersonChangesList(
 	start_date string,

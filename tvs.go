@@ -1,11 +1,11 @@
-package wraptmdb_go
+package wraptmdb
 
 /*
  * The MIT License (MIT)
  *
  * Copyright (c) kwangsing3
  *
- * https://github.com/wrapTMDB/wrapTMDB-go
+ * https://github.com/wrapTMDB/wraptmdb-go
  *
  */
 import (

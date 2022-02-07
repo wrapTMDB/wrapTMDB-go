@@ -1,4 +1,4 @@
-package wraptmdb_go
+package wraptmdb
 
 import (
 	"fmt"
@@ -12,7 +12,7 @@ import (
  *
  * Copyright (c) kwangsing3
  *
- * https //github.com/wrapTMDB/wrapTMDB-ts
+ * https://github.com/wrapTMDB/wraptmdb-go
  *
  */
 
@@ -26,7 +26,7 @@ var Search search
  * @param {string} query keywords
  * @param {int} page (optional)
  * @returns JSON
- * @doc https //developers.themoviedb.org/3/search/search-companies
+ * @doc https://developers.themoviedb.org/3/search/search-companies
  ********************/
 func (s *search) GetSearchCompanies(query string, page int) interface{} {
 	var token = c_module.GetToken()
@@ -55,7 +55,7 @@ func (s *search) GetSearchCompanies(query string, page int) interface{} {
  * @param {string} query keywords
  * @param {int} page (optional)
  * @returns JSON
- * @doc https //developers.themoviedb.org/3/search/search-collections
+ * @doc https://developers.themoviedb.org/3/search/search-collections
  ********************/
 func (s *search) GetSearchCollections(
 	query string,
@@ -90,7 +90,7 @@ func (s *search) GetSearchCollections(
  * @param {string} query keywords
  * @param {int} page (optional)
  * @returns JSON
- * @doc https //developers.themoviedb.org/3/search/search-keywords
+ * @doc https://developers.themoviedb.org/3/search/search-keywords
  ********************/
 func (s *search) GetSearchKeywords(query string, page int) interface{} {
 	var token = c_module.GetToken()
@@ -122,7 +122,7 @@ func (s *search) GetSearchKeywords(query string, page int) interface{} {
  * @param {int} year (optional)
  * @param {int} primary_release_year (optional)
  * @returns JSON
- * @doc https //developers.themoviedb.org/3/search/search-movies
+ * @doc https://developers.themoviedb.org/3/search/search-movies
  ********************/
 func (s *search) GetSearchMovies(
 	query string,
@@ -175,7 +175,7 @@ func (s *search) GetSearchMovies(
  * @param {bool} include_adult (optional)
  * @param {string} region (optional)
  * @returns JSON
- * @doc https //developers.themoviedb.org/3/search/multi-search
+ * @doc https://developers.themoviedb.org/3/search/multi-search
  ********************/
 func (s *search) GetMultiSearch(
 	query string,
@@ -216,7 +216,7 @@ func (s *search) GetMultiSearch(
  * @param {bool} include_adult (optional)
  * @param {string} region (optional)
  * @returns JSON
- * @doc https //developers.themoviedb.org/3/search/search-people
+ * @doc https://developers.themoviedb.org/3/search/search-people
  ********************/
 func (s *search) GetSearchPeople(
 	query string,
@@ -260,7 +260,7 @@ func (s *search) GetSearchPeople(
  * @param {bool} include_adult (optional)
  * @param {int} first_air_date_year (optional)
  * @returns JSON
- * @doc https //developers.themoviedb.org/3/search/search-tv-shows
+ * @doc https://developers.themoviedb.org/3/search/search-tv-shows
  ********************/
 func (s *search) GetSearchTVShows(
 	query string,

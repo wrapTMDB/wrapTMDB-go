@@ -1,4 +1,4 @@
-package wraptmdb_go
+package wraptmdb
 
 import (
 	"github.com/kwangsing3/http_methods_golang"
@@ -9,7 +9,7 @@ import (
  *
  * Copyright (c) kwangsing3
  *
- * https  //github.com/wrapTMDB/wrapTMDB-ts
+ * https://github.com/wrapTMDB/wraptmdb-go
  *
  */
 
@@ -25,7 +25,7 @@ var Discover discover
  * @param {any} query
  * @example "query" are more than 32 available properties.... see more in discover.ts
  * @returns JSON
- * @doc https  //developers.themoviedb.org/3/discover/movie-discover
+ * @doc https://developers.themoviedb.org/3/discover/movie-discover
  ********************/
 func (d *discover) GetMovieDiscover(query map[string]string) interface{} {
 	var token = c_module.GetToken()
@@ -95,7 +95,7 @@ func (d *discover) GetMovieDiscover(query map[string]string) interface{} {
        "without_companies"  {string}
    }
    ....more available properties plz visit
-   @doc https  //developers.themoviedb.org/3/discover/movie-discover
+   @doc https://developers.themoviedb.org/3/discover/movie-discover
 */
 /********************
  * 2./discover/tv
@@ -104,7 +104,7 @@ func (d *discover) GetMovieDiscover(query map[string]string) interface{} {
  * @param {any} query
  * @example "query" are more than 24 available properties.... see more in discover.ts
  * @returns JSON
- * @doc https  //developers.themoviedb.org/3/discover/tv-discover
+ * @doc https://developers.themoviedb.org/3/discover/tv-discover
  ********************/
 func (d *discover) GetTVDiscover(query map[string]string) interface{} {
 	var token = c_module.GetToken()
@@ -164,7 +164,7 @@ func (d *discover) GetTVDiscover(query map[string]string) interface{} {
        "without_companies"  {string}
    }
    ....more available properties plz visit
-   @doc https  //developers.themoviedb.org/3/discover/tv-discover
+   @doc https://developers.themoviedb.org/3/discover/tv-discover
 */
 
 func stringByQuery(query map[string]string) string {

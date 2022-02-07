@@ -1,4 +1,4 @@
-package wraptmdb_go
+package wraptmdb
 
 import "github.com/kwangsing3/http_methods_golang"
 
@@ -7,7 +7,7 @@ import "github.com/kwangsing3/http_methods_golang"
  *
  * Copyright (c) kwangsing3
  *
- * https://github.com/wrapTMDB/wrapTMDB-go
+ * https://github.com/wrapTMDB/wraptmdb-go
  *
  */
 

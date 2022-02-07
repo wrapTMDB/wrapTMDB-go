@@ -1,4 +1,4 @@
-package wraptmdb_go
+package wraptmdb
 
 import "github.com/kwangsing3/http_methods_golang"
 
@@ -7,7 +7,7 @@ import "github.com/kwangsing3/http_methods_golang"
  *
  * Copyright (c) kwangsing3
  *
- * https //github.com/wrapTMDB/wrapTMDB-ts
+ * https://github.com/wrapTMDB/wraptmdb-go
  *
  */
 type collection struct{}
@@ -20,7 +20,7 @@ var Collections collection
  * @param {number|string} collection_id
  * @param {string} language (optional)
  * @returns JSON
- * @doc https //developers.themoviedb.org/3/collections/get-collection-details
+ * @doc https://developers.themoviedb.org/3/collections/get-collection-details
  ********************/
 func (c *collection) GetDetails(
 	collection_id string,
@@ -49,7 +49,7 @@ func (c *collection) GetDetails(
  * @param {number|string} collection_id
  * @param {string} language (optional)
  * @returns JSON
- * @doc https //developers.themoviedb.org/3/collections/get-collection-images
+ * @doc https://developers.themoviedb.org/3/collections/get-collection-images
  ********************/
 func (c *collection) GetImages(
 	collection_id string,
@@ -79,7 +79,7 @@ func (c *collection) GetImages(
  * @param {number|string} collection_id
  * @param {string} language (optional)
  * @returns JSON
- * @doc https //developers.themoviedb.org/3/collections/get-collection-translations
+ * @doc https://developers.themoviedb.org/3/collections/get-collection-translations
  ********************/
 func (c *collection) GetTranslations(
 	collection_id string,

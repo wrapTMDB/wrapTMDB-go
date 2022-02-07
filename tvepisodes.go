@@ -1,4 +1,4 @@
-package wraptmdb_go
+package wraptmdb
 
 import (
 	"fmt"
@@ -11,7 +11,7 @@ import (
  *
  * Copyright (c) kwangsing3
  *
- * https //github.com/wrapTMDB/wrapTMDB-ts
+ * https://github.com/wrapTMDB/wraptmdb-go
  *
  */
 
@@ -28,7 +28,7 @@ var TVEpisodes tvEpisodes
  * @param {string} language (optional)
  * @param {string} append_to_response (optional)
  * @returns JSON
- * @doc https //developers.themoviedb.org/3/tv-episodes/get-tv-episode-details
+ * @doc https://developers.themoviedb.org/3/tv-episodes/get-tv-episode-details
  ********************/
 func (t *tvEpisodes) GetDetails(
 	tv_id string,
@@ -70,7 +70,7 @@ func (t *tvEpisodes) GetDetails(
  * @param {string} guest_session_id (optional)
  * @param {string} session_id (optional)
  * @returns JSON
- * @doc https //developers.themoviedb.org/3/tv-episodes/get-tv-episode-account-states
+ * @doc https://developers.themoviedb.org/3/tv-episodes/get-tv-episode-account-states
  ********************/
 func (t *tvEpisodes) GetAccountStates(
 	tv_id string,
@@ -111,7 +111,7 @@ func (t *tvEpisodes) GetAccountStates(
  * @param {string} end_date (optional)
  * @param {int} page (optional)
  * @returns JSON
- * @doc https //developers.themoviedb.org/3/tv-episodes/get-tv-episode-changes
+ * @doc https://developers.themoviedb.org/3/tv-episodes/get-tv-episode-changes
  ********************/
 func (t *tvEpisodes) GetChanges(
 	episode_id string,
@@ -151,7 +151,7 @@ func (t *tvEpisodes) GetChanges(
  * @param {string} episode_int
  * @param {string} language (optional)
  * @returns JSON
- * @doc https //developers.themoviedb.org/3/tv-episodes/get-tv-episode-credits
+ * @doc https://developers.themoviedb.org/3/tv-episodes/get-tv-episode-credits
  ********************/
 func (t *tvEpisodes) GetCredits(
 	tv_id string,
@@ -187,7 +187,7 @@ func (t *tvEpisodes) GetCredits(
  * @param {string} season_int
  * @param {string} episode_int
  * @returns JSON
- * @doc https //developers.themoviedb.org/3/tv-episodes/get-tv-episode-external-ids
+ * @doc https://developers.themoviedb.org/3/tv-episodes/get-tv-episode-external-ids
  ********************/
 func (t *tvEpisodes) GetExternalIDs(
 	tv_id string,
@@ -219,7 +219,7 @@ func (t *tvEpisodes) GetExternalIDs(
  * @param {string} season_int
  * @param {string} episode_int
  * @returns JSON
- * @doc https //developers.themoviedb.org/3/tv-episodes/get-tv-episode-images
+ * @doc https://developers.themoviedb.org/3/tv-episodes/get-tv-episode-images
  ********************/
 func (t *tvEpisodes) GetImages(
 	tv_id string,
@@ -252,7 +252,7 @@ func (t *tvEpisodes) GetImages(
  * @param {string} season_int
  * @param {string} episode_int
  * @returns JSON
- * @doc https //developers.themoviedb.org/3/tv-episodes/get-tv-episode-translations
+ * @doc https://developers.themoviedb.org/3/tv-episodes/get-tv-episode-translations
  ********************/
 func (t *tvEpisodes) GetTranslations(
 	tv_id string,
@@ -291,7 +291,7 @@ func (t *tvEpisodes) GetTranslations(
  * @example query{
  *    "value"  8.5
  * }
- * @doc https //developers.themoviedb.org/3/tv-episodes/rate-tv-episode
+ * @doc https://developers.themoviedb.org/3/tv-episodes/rate-tv-episode
  ********************/
 func (t *tvEpisodes) PostRateTVEpisode(
 	tv_id string,
@@ -334,7 +334,7 @@ func (t *tvEpisodes) PostRateTVEpisode(
  * @param {string} session_id (optional)
  * @param {string} guest_session_id (optional)
  * @returns JSON
- * @doc https //developers.themoviedb.org/3/tv-episodes/delete-tv-episode-rating
+ * @doc https://developers.themoviedb.org/3/tv-episodes/delete-tv-episode-rating
  ********************/
 func (t *tvEpisodes) DeleteDeleteRating(
 	tv_id string,
@@ -377,7 +377,7 @@ func (t *tvEpisodes) DeleteDeleteRating(
  * @param {string} episode_int
  * @param {string} language (optional)
  * @returns JSON
- * @doc https //developers.themoviedb.org/3/tv-episodes/get-tv-episode-videos
+ * @doc https://developers.themoviedb.org/3/tv-episodes/get-tv-episode-videos
  ********************/
 func (t *tvEpisodes) GetVideos(
 	tv_id string,

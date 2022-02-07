@@ -1,4 +1,4 @@
-package wraptmdb_go
+package wraptmdb
 
 import "github.com/kwangsing3/http_methods_golang"
 
@@ -7,7 +7,7 @@ import "github.com/kwangsing3/http_methods_golang"
  *
  * Copyright (c) kwangsing3
  *
- * https //github.com/wrapTMDB/wrapTMDB-go
+ * https://github.com/wrapTMDB/wraptmdb-go
  *
  */
 
@@ -20,7 +20,7 @@ var Network network
  * @description Get the details of a network.
  * @param {number|string} network_id
  * @returns {any} JSON
- * @doc https //developers.themoviedb.org/3/networks/get-network-details
+ * @doc https://developers.themoviedb.org/3/networks/get-network-details
  ********************/
 func (n *network) GetDetails(network_id string) interface{} {
 	var token = c_module.GetToken()
@@ -38,7 +38,7 @@ func (n *network) GetDetails(network_id string) interface{} {
  * @description Get the alternative names of a network.
  * @param {number|string} network_id
  * @returns JSON
- * @doc https //developers.themoviedb.org/3/networks/get-network-alternative-names
+ * @doc https://developers.themoviedb.org/3/networks/get-network-alternative-names
  ********************/
 func (n *network) GetAlternativeNames(network_id string) interface{} {
 	var token = c_module.GetToken()
@@ -60,7 +60,7 @@ func (n *network) GetAlternativeNames(network_id string) interface{} {
  * @description Get the TV network logos by id.
  * @param {number|string} network_id
  * @returns JSON
- * @doc https //developers.themoviedb.org/3/networks/get-network-images
+ * @doc https://developers.themoviedb.org/3/networks/get-network-images
  ********************/
 func (n *network) GetImages(network_id string) interface{} {
 	var token = c_module.GetToken()

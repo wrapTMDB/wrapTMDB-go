@@ -1,4 +1,4 @@
-package wraptmdb_go
+package wraptmdb
 
 type routepath struct {
 	MOVIE          string

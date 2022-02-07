@@ -1,4 +1,4 @@
-package wraptmdb_go
+package wraptmdb
 
 import (
 	"fmt"
@@ -11,7 +11,7 @@ import (
  *
  * Copyright (c) kwangsing3
  *
- * https //github.com/wrapTMDB/wrapTMDB-ts
+ * https://github.com/wrapTMDB/wraptmdb-go
  *
  */
 
@@ -25,7 +25,7 @@ var People people
  * @param {int|string} person_id
  * @param {string} language
  * @returns {any} JSON
- * @doc https //developers.themoviedb.org/3/people/get-person-details
+ * @doc https://developers.themoviedb.org/3/people/get-person-details
  ********************/
 func (p *people) GetDetails(
 	person_id string,
@@ -56,7 +56,7 @@ func (p *people) GetDetails(
  * @param {int} page (optional)
  * @param {string} start_date (optional)
  * @returns {any} JSON
- * @doc https //developers.themoviedb.org/3/people/get-person-changes
+ * @doc https://developers.themoviedb.org/3/people/get-person-changes
  ********************/
 func (p *people) GetChanges(
 	person_id string,
@@ -92,7 +92,7 @@ func (p *people) GetChanges(
  * @param {int|string} person_id
  * @param {string} language(optional)
  * @returns {any} JSON
- * @doc https //developers.themoviedb.org/3/people/get-person-movie-credits
+ * @doc https://developers.themoviedb.org/3/people/get-person-movie-credits
  ********************/
 func (p *people) GetMovieCredits(
 	person_id string,
@@ -120,7 +120,7 @@ func (p *people) GetMovieCredits(
  * @param {int|string} person_id
  * @param {string} language(optional)
  * @returns {any} JSON
- * @doc https //developers.themoviedb.org/3/people/get-person-tv-credits
+ * @doc https://developers.themoviedb.org/3/people/get-person-tv-credits
  ********************/
 func (p *people) GetTVCredits(
 	person_id string,
@@ -148,7 +148,7 @@ func (p *people) GetTVCredits(
  * @param {int|string} person_id
  * @param {string} language(optional)
  * @returns {any} JSON
- * @doc https //developers.themoviedb.org/3/people/get-person-combined-credits
+ * @doc https://developers.themoviedb.org/3/people/get-person-combined-credits
  ********************/
 func (p *people) GetCombinedCredits(
 	person_id string,
@@ -176,7 +176,7 @@ func (p *people) GetCombinedCredits(
  * @param {int|string} person_id
  * @param {string} language(optional)
  * @returns {any} JSON
- * @doc https //developers.themoviedb.org/3/people/get-person-external-ids
+ * @doc https://developers.themoviedb.org/3/people/get-person-external-ids
  ********************/
 func (p *people) GetExternalIDs(
 	person_id string,
@@ -203,7 +203,7 @@ func (p *people) GetExternalIDs(
  * @description Get the images for a person.
  * @param {int|string} person_id
  * @returns {any} JSON
- * @doc https //developers.themoviedb.org/3/people/get-person-images
+ * @doc https://developers.themoviedb.org/3/people/get-person-images
  ********************/
 func (p *people) GetImages(person_id string) interface{} {
 	var token = c_module.GetToken()
@@ -226,7 +226,7 @@ func (p *people) GetImages(person_id string) interface{} {
  * @param {string} language(optional)
  * @param {int} page(optional)
  * @returns {any} JSON
- * @doc https //developers.themoviedb.org/3/people/get-tagged-images
+ * @doc https://developers.themoviedb.org/3/people/get-tagged-images
  ********************/
 func (p *people) GetTaggedImages(
 	person_id string,
@@ -258,7 +258,7 @@ func (p *people) GetTaggedImages(
  * @param {int|string} person_id
  * @param {string} language(optional)
  * @returns {any} JSON
- * @doc https //developers.themoviedb.org/3/people/get-person-translations
+ * @doc https://developers.themoviedb.org/3/people/get-person-translations
  ********************/
 func (p *people) GetTranslations(
 	person_id string,
@@ -285,7 +285,7 @@ func (p *people) GetTranslations(
  * @description Get the most newly created person. This is a live response and will continuously change.
  * @param {string} language(optional)
  * @returns {any} JSON
- * @doc https //developers.themoviedb.org/3/people/get-latest-person
+ * @doc https://developers.themoviedb.org/3/people/get-latest-person
  ********************/
 func (p *people) GetLatest(language string) interface{} {
 	var token = c_module.GetToken()
@@ -307,7 +307,7 @@ func (p *people) GetLatest(language string) interface{} {
  * @param {string} language(optional)
  * @param {int} page(optional)
  * @returns {any} JSON
- * @doc https //developers.themoviedb.org/3/people/get-person-details
+ * @doc https://developers.themoviedb.org/3/people/get-person-details
  ********************/
 func (p *people) GetPopular(language string, page int) interface{} {
 	var token = c_module.GetToken()
